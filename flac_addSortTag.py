@@ -27,7 +27,6 @@ def main():
             # cuesheetタグがある場合
             if "cuesheet" in tags:
                 cuelist = tags["cuesheet"][0].splitlines()
-                print(cuelist)
                 tracknum = ""
                 for item in cuelist:
                     # TRACK行からトラック番号を取得
