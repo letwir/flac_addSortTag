@@ -1,7 +1,11 @@
 # flac_addSortTag
 mutagenを使ってflacファイルにカタカナ、英字でソートタグを追記します。  
-CueSheet埋め込みflacに対応しており、内部のCuesheetから情報を読み取って  
+CueSheet埋め込みflac(flac+cue)に対応しており、内部のCuesheetから情報を読み取って  
 MutagenによりVorbisCommentへ書き込みます。  
+  
+外部にCueSheetを置いている場合は対応していません。　(hoge.flac, hoge.cue)  
+cuetools等で1ファイルにまとめている OR 1ファイル1曲のflacに対応しています。(hoge.flac)  
+  
   
 # 事前準備
 以下が依存なのでpipもしくはpipxでインストールします。  
@@ -32,6 +36,6 @@ python flac_addSortTag.py <ディレクトリ>
 メタタグ領域のパディングが少ないとかなり時間がかかるので事前に拡張しておくことをオススメします。  
 <例>  
 ```
-flac -P 2044 <flacファイル>　-o <出力先>
+flac -P 2044 <flacファイル> -o <出力先>
 `metaflac --add-padding=2044 <flacファイル>
 ```
