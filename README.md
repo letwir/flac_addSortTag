@@ -1,0 +1,2 @@
+# flac_addSortTag
+mutagenを使ってflacファイルにカタカナ、英字でソートタグを追記します。CueSheet対応
