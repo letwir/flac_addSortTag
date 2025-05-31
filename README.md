@@ -1,7 +1,7 @@
 # flac_addSortTag
 mutagenを使ってflacファイルにカタカナ、英字でソートタグを追記します。  
 CueSheet埋め込みflacに対応しており、内部のCuesheetから情報を読み取って  
-MutagenによりVorvisCommentへ書き込みます。  
+MutagenによりVorbisCommentへ書き込みます。  
   
 # 事前準備
 以下が依存なのでpipもしくはpipxでインストールします。  
