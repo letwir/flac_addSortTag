@@ -91,6 +91,6 @@ def convertKana(text):
 # メイン処理の実行
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Usage: python flac_sortTag.py <directory>")
+        print("Usage: python flac_addSortTag.py <directory>")
         sys.exit(1)
     main()
