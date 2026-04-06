@@ -20,7 +20,7 @@ kakasi.setMode("H", "K")  # H:ひらがな→K:カタカナ
 
 # ---- ログの設定 ----
 logging.basicConfig(
-    level=logging.DEBUG,  # ログレベルを設定（必要に応じてDEBUGなどに変更可能）
+    level=logging.WARN,  # ログレベルを設定（必要に応じてDEBUGなどに変更可能）
     format="%(asctime)s [%(levelname)s] %(message)s",  # ログのフォーマット
     handlers=[
         # logging.FileHandler("lastfm_ranking.log"),  # ログをファイルに出力
@@ -124,7 +124,9 @@ def main(directory):
                     logging.error(f"FLAC Load Error, skip: {file}\n{e}")
                     continue
                 # アルバムソートタグが同じ場合はスキップ。albumタグがない場合も同様(False = False)。
-                if tags.get("albumsort")[0] == convertKana(tags.get("album")[0]):
+                if (tags.get("albumsort") or tags.get("album")) and tags["albumsort"][
+                    0
+                ] == convertKana(tags["album"][0]):
                     logging.debug(f"already sorted. skip: {file}")
                     continue
                 futures.append(ex.submit(insertSortTags, tags, file))
