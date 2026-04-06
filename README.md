@@ -28,21 +28,20 @@ git cloneでも可。
  * COMPOSER -> composersort  
  * ALBUMARTIST -> albumartistsort  
  * ALBUM -> albumsort  
-```
+```bash
 # 前提プラグインのインストール
-# **Linuxの方はvenvを使用してください。**
-pip install pykakasi
-pip install mutagen
+# **Linuxの方はvenvを検討してください。**
+pip install -r requirements.txt
 # 本体のダウンロード
 curl https://raw.githubusercontent.com/letwir/flac_addSortTag/refs/heads/main/flac_addSortTag.py -o flac_addSortTag.py
 ```
 ### 実行
 Windowsユーザー
-```
-python flac_addSortTag.py <ディレクトリ>
+```powershell
+py flac_addSortTag.py <ディレクトリ>
 ```
 **Linuxユーザーは以下**
-```
+```bash
 python3 flac_addSortTag.py <ディレクトリ>
 ```
 ### 詳細
@@ -51,11 +50,11 @@ python3 flac_addSortTag.py <ディレクトリ>
  * 漢字、ひらがな -> カタカナ  
  * 英字はそのまま  
   
-   
+     
 ### TIPS
 メタタグ領域のパディングが少ないとかなり時間がかかるので事前に拡張しておくことをオススメします。  
 <例>  
-```
+```bash
 metaflac --add-padding=2044 <flacファイル>
 # or
 flac -P 2044 <flacファイル> -o <出力先>
